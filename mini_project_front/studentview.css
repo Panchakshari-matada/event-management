@@ -1,0 +1,168 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to top, #ccffff, #ffff99); 
+  text-align: center;
+  height:auto;
+  
+}
+.header {
+  background-color: #1D316E; 
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+}
+.logo-circle img{
+  width:60px;
+  height: 60px;
+  border-radius:50%;
+}
+
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family:'poppins';
+  /* margin-right: 65rem; */
+}
+
+.header-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  /* margin-right: 63.5rem; */
+}
+
+.header-logo {
+  width: 60px;
+}
+
+    /* Navigation Bar */
+    .nav {
+      background-color: #0073e6; /* Light Blue */
+      padding: 10px 20px;
+      display: flex;
+      justify-content:flex-end;
+      align-items: center;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 40px;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    .nav .search-bar {
+  display: flex;
+  align-items: center;
+  position: relative; /* Ensure relative positioning for the container */
+}
+
+.nav .search-bar input {
+  padding: 5px 10px 5px 30px; /* Add padding to make space for the icon inside the input */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.nav .search-bar img {
+  position: absolute;
+  left: 10px; /* Position the icon inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Make sure the icon doesn't interfere with user input */
+}
+
+    
+    .nav .search-bar button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Grid Section */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 50px;
+      column-gap: 50px;
+      padding: 50px 20px;
+      margin: 0 auto;
+      
+      justify-items: center;
+      align-items: center;
+      position: relative;
+      
+    }
+
+    a{
+      text-decoration: none;
+    }
+    
+    .card {
+      background-color: #e0e0e0;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      height: 200px;
+      width:300px;
+      background-color: #fae49b;
+      
+
+    }
+    .card:hover{
+      box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+    }
+    .card h3 {
+      
+      font-size: 18px;
+      padding-top: 10px;  
+      position: relative;
+    }
+    .card img{
+      width: 200px;
+      height: 140px;
+      border-radius: 10%;
+    }
+    .name{
+        padding-left: 500px;
+    }
+    .name h4{
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    .card h3 a{
+      color:#1D316E;
+      text-decoration: none;
+    }
+   
+    .card hr{
+        color: 000000;
+        margin-top: 10px;
+    }
+    .logo1{
+        color: #ffffff;
+        width:30px;
+      height:30px;
+    }

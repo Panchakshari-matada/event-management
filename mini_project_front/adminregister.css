@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    background: linear-gradient(to top, #ccffff, #ffff99);  
+    min-height: 100vh;
+    
+}
+
+
+.header {
+     /* width: 100%; */
+    background-color: #1D316E; 
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+}
+.logo-circle img{
+  width:60px;
+  height: 60px;
+  border-radius:50%;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    font-family:'poppins';
+    /* margin-right: 65rem; */
+}
+
+.header-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    /* margin-right: 63.5rem; */
+}
+
+.header-logo {
+    width: 60px;
+}
+
+    .container {
+       
+      /* min-width: 600px; */
+      max-width: 800px; 
+      margin: 100px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h1 {
+      text-align: center;
+      font-size: 2rem;
+      color:#1D316E;
+      font-family: 'poppines';
+      margin-bottom: 20px;
+      
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .form-group input {
+      width: 48%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      
+    }
+    .btn a{
+      text-decoration: none;
+      color: white;
+    }
+
+    
+  

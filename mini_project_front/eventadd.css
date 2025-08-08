@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #ccffff, #ffff99); 
+    text-align: center;
+    height:180vh;
+    
+}
+.header {
+    background-color: #1D316E; 
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+}
+.logo-circle img{
+  width:60px;
+  height: 60px;
+  border-radius:50%;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family:'poppins';
+    /* margin-right: 65rem; */
+}
+
+.header-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    /* margin-right: 63.5rem; */
+}
+
+.header-logo {
+    width: 60px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+.container h2{
+    padding-bottom: 40px;
+    font-size: 2rem;
+    color:#1D316E;
+    font-family: 'poppines';
+}
+ 
+.form-group {
+  margin-bottom: 15px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  
+}
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+label{
+  text-align: start;
+}
+input[type="radio"] {
+  width: auto;
+  margin-right: 520px;
+  
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button a{
+  text-decoration: none;
+  color: white;
+}
+button:hover {
+  background-color: #0056b3;
+}

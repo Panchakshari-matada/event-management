@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Students</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #ccffff, #ffff99); 
+    text-align: center;
+    height:100vh;
+    overflow: scroll;
+    
+}
+.header {
+    background-color: #1D316E; 
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+}
+.logo-circle img{
+    width:60px;
+    height: 60px;
+    border-radius:50%;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family:'poppins';
+    /* margin-right: 65rem; */
+}
+
+.header-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    /* margin-right: 63.5rem; */
+}
+
+.header-logo {
+    width: 60px;
+}
+
+#heading{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+        table {
+            width: 95%;
+            border-collapse: collapse;
+            margin: 20px 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="Rlogo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="header-content">
+            <h1>Veerashaiva Vidyavardhaka Sangha's</h1>
+            <h2>R.Y.M.E.C Events Management</h2>
+        </div>
+        <img src="images.jpg" alt="College Logo" class="header-logo">
+    </header>
+    <h1 id="heading">Registered Students</h1>
+    <table id="student-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>USN</th>
+                <th>Branch</th>
+                <th>Semester</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Student rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <script src="students.js"></script>
+</body>
+</html>

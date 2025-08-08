@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R.Y.M.E.C Events Management</title>
+  <link rel="stylesheet" href="studentview.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">
+              <img src="Rlogo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="header-content">
+            <h1>Veerashaiva Vidyavardhaka Sangha's</h1>
+            <h2>R.Y.M.E.C Events Management</h2>
+        </div>
+        <img src="images.jpg" alt="College Logo" class="header-logo">
+    </header>
+    
+<!-- Navigation Bar -->
+<div class="nav">
+  <div class="nav_comp">
+    <a href="home.html">Home page</a>
+    <a href="admlogin.html">Admin Login</a>
+  </div>
+  <div class="search-bar">
+    <img src="search.png" alt="Search Icon">
+    <input type="text" placeholder="Search">
+  </div>
+</div>
+
+<!-- Grid Section -->
+<div class="grid-container">
+  <a href="#" class="card" data-name="CSE">
+    <img src="cs.png" alt="cse-logo"/>
+    <h3>Computer Science</h3>
+  </a>
+  <a href="#" class="card" data-name="ISE">
+    <img src="ise.png" alt="ise-logo"/>
+    <h3>Information Science</h3>
+  </a>
+  <a href="#" class="card" data-name="AIML">
+    <img src="aiml.png" alt="aiml-logo"/>
+    <h3>Artifical Inteligence</h3>
+  </a>
+  <a href="#" class="card" data-name="DS">
+    <img src="datascience.jpg" alt="ds-logo"/>
+    <h3>Data Science</h3>
+  </a>
+  <a href="#" class="card" data-name="ECE">
+    <img src="ECE.png" alt="mech"/>
+    <h3>Electronic communication</h3>
+  </a>
+  <a href="#" class="card" data-name="EEE">
+    <img src="EEE.png" alt="mech"/>
+    <h3>Electrical & Electronics</h3>
+  </a>
+  <a href="#" class="card" data-name="CIVIL">
+    <img src="civil.png" alt="civil-logo"/>
+    <h3>CIVIL</h3>
+  </a>
+  <a href="#" class="card" data-name="MECH">
+    <img src="mech.png" alt="mech"/>
+    <h3>MECHNICAL</h3>
+  </a>
+  
+</div>
+
+<script>
+  // Add event listeners to all cards
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', function () {
+      const department = this.getAttribute('data-name'); // Get the department name
+      localStorage.setItem('selectedBranch', department); // Store the branch name in localStorage
+      window.location.href = 'stdregisterview.html'; // Redirect to the desired page
+    });
+  });
+</script>
+</body>
+</html>

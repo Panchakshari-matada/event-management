@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="stdindregister.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="Rlogo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="header-content">
+            <h1>Veerashaiva Vidyavardhaka Sangha's</h1>
+            <h2>R.Y.M.E.C Events Management</h2>
+        </div>
+        <img src="images.jpg" alt="College Logo" class="header-logo">
+    </header>
+
+    <div class="container">
+        <h2>Event Registration</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="usn">USN:</label>
+                <input type="text" id="usn" name="usn" placeholder="Enter USN" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" placeholder="Enter branch" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sem">Sem:</label>
+                <input type="text" id="sem" name="sem" placeholder="Enter semester" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone No:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Get the form element
+        const form = document.getElementById('registration-form');
+
+// Add event listener to handle form submission
+form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    const formData = new FormData(form);
+
+    // Convert FormData to an object
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),  // Ensure email input has the correct name attribute
+        usn: formData.get('usn'),
+        branch: formData.get('branch'),
+        sem: formData.get('sem'),
+        phone_number: formData.get('phone') // Ensure phone input has name="phone"
+    };
+
+    try {
+        // Log the data being sent
+        console.log('Submitting data:', data);
+
+        // Make the POST request to the backend
+        const response = await fetch('http://127.0.0.1:8000/registers/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data), // Send the data as JSON
+        });
+
+        // Log the response for debugging
+        console.log('Response status:', response.status);
+
+        // Handle the response
+        if (response.ok) {
+            alert('Registration successful!');
+            form.reset(); // Reset the form
+            window.location.href = "stdregisterview.html"; // Redirect after submission
+        } else {
+            // Log the server response body for debugging
+            const errorData = await response.json();
+            console.error('Server error:', errorData);
+
+            // Display a user-friendly error message
+            alert(`Failed to submit the form: ${errorData.message || 'Unknown error'}`);
+        }
+    } catch (error) {
+        // Handle network or other runtime errors
+        console.error('Error:', error);
+        alert('Error submitting the form. Please check your network connection or try again later.');
+    }
+});
+
+    </script>
+</body>
+</html>

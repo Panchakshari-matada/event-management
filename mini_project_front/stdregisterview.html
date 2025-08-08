@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R.Y.M.E.C Events Management</title>
+    <link rel="stylesheet" href="stdregisterview.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo-circle">
+          <img src="Rlogo.jpg" alt="logo">
+        </div>
+      </div>
+      <div class="header-content">
+        <h1>Veerashaiva Vidyavardhaka Sangha's</h1>
+        <h2>R.Y.M.E.C Events Management</h2>
+      </div>
+      <img src="images.jpg" alt="College Logo" class="header-logo" />
+    </header>
+
+    <div class="nav">
+      <div class="nav_comp">BRANCH: <span id="branch-name"></span></div>
+    </div>
+
+    <main>
+      <!-- <div class="categories">
+        <h2>Categories</h2>
+        <ul>
+          <li><button type="button">Technical</button></li>
+          <li><button type="button">Non-Technical</button></li>
+          <li><button type="button">Cultural</button></li>
+          <li><button type="button">Sports</button></li>
+        </ul>
+      </div> -->
+
+      <div class="events">
+        <!-- Dynamic Event Cards Will Be Rendered Here -->
+      </div>
+    </main>
+
+    <script>
+      // Retrieve the branch name from localStorage
+      const branchName =
+        localStorage.getItem("selectedBranch") || "Unknown Branch";
+      document.getElementById("branch-name").textContent = branchName;
+
+      // Fetch events data from the backend and display them
+      const fetchEvents = async () => {
+        try {
+          const response = await fetch("http://127.0.0.1:8000/events/"); // Adjust the URL to match your backend endpoint
+          if (!response.ok) {
+            throw new Error(`Failed to fetch events: ${response.status}`);
+          }
+
+          const events = await response.json();
+
+          // Filter events by branch name (case-insensitive comparison)
+          const filteredEvents = events.filter(
+            (event) => event.branch?.toLowerCase() === branchName.toLowerCase()
+          );
+
+          const eventsContainer = document.querySelector(".events");
+          eventsContainer.innerHTML = ""; // Clear existing content
+
+          if (filteredEvents.length === 0) {
+            eventsContainer.innerHTML = `<p>No events found for the selected branch.</p>`;
+            return;
+          }
+
+          filteredEvents.forEach((event) => {
+            const eventCard = document.createElement("div");
+            eventCard.classList.add("event-card");
+
+            console.log(event.upload_poster);
+            // Construct the full media URL
+            // const posterUrl = event.upload_poster
+            //   ? `http://127.0.0.1:8000/media/event_posters/${event.upload_poster}`
+            //   : "path/to/placeholder-image.jpg"; // Replace with your actual placeholder path
+
+            eventCard.innerHTML = `
+              <div class="poster">
+                <img src="${event.upload_poster}" alt="${event.event_title}" onerror="this.src='path/to/placeholder-image.jpg';">
+              </div>
+              <div class="label">
+                <div class="event-name">${event.event_title}</div>
+                <a href="eventdecs.html?event_id=${event.event_id}">
+                  <button class="details-button">
+                    Details
+                  </button>
+                </a>
+              </div>
+            `;
+            eventsContainer.appendChild(eventCard);
+          });
+        } catch (error) {
+          console.error("Error fetching events:", error.message);
+
+          // Show a friendly message to the user
+          const eventsContainer = document.querySelector(".events");
+          eventsContainer.innerHTML = `<p>Failed to load events. Please try again later.</p>`;
+        }
+      };
+
+      // Load events on page load
+      fetchEvents();
+    </script>
+  </body>
+</html>

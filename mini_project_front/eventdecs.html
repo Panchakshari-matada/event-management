@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Form</title>
+    <link rel="stylesheet" href="eventdesc.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="Rlogo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="header-content">
+            <h1>Veerashaiva Vidyavardhaka Sangha's</h1>
+            <h2>R.Y.M.E.C Events Management</h2>
+        </div>
+        <img src="images.jpg" alt="College Logo" class="header-logo">
+    </header>
+    <div class="container">
+        <div class="event-form">
+            <div class="cont">
+                <div class="form-group">
+                    <label for="event-title">Event Title:</label>
+                    <input type="text" id="event-title" name="event-title" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="event-category">Event Category:</label>
+                    <input type="text" id="event-category" name="event-category" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="coordinator-name">Name of the Coordinator:</label>
+                    <input type="text" id="coordinator-name" name="coordinator-name" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone No:</label>
+                    <input type="text" id="phone" name="phone" readonly>
+                </div>
+            </div>
+            <div class="cont1">
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" readonly></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="venue-time">Venue :</label>
+                    <input type="text" id="venue-time" name="venue-time" readonly>
+                </div>
+                <div class="btn">
+                  <a href="stdindregister.html" style="text-decoration: none;">
+                    <button type="button" class="register-btn">
+                        Register
+                    </button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Retrieve the event_id from the query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = urlParams.get('event_id');
+
+        // Fetch event details and populate the form
+        const fetchEventDetails = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/events/${eventId}/`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch event details: ${response.status}`);
+                }
+
+                const event = await response.json();
+
+                // Populate the input fields with the event details
+                document.getElementById('event-title').value = event.event_title;
+                document.getElementById('event-category').value = event.category;
+                document.getElementById('coordinator-name').value = event.name_of_coordinator;
+                document.getElementById('phone').value = event.phone_number;
+                document.getElementById('description').value = event.description;
+                document.getElementById('venue-time').value = event.venue;
+            } catch (error) {
+                console.error('Error fetching event details:', error.message);
+
+                // Display a message to the user if fetching fails
+                const container = document.querySelector('.container');
+                container.innerHTML = `<p>Failed to load event details. Please try again later.</p>`;
+            }
+        };
+
+        // Load event details on page load
+        if (eventId) {
+            fetchEventDetails();
+        } else {
+            console.error('Event ID not provided in the query string');
+        }
+    </script>
+</body>
+</html>

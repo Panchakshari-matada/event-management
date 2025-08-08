@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #ccffff, #ffff99); 
+    text-align: center;
+    height:100vh;
+    
+}
+.header {
+    background-color: #1D316E; 
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+}
+.logo-circle img{
+    width:60px;
+    height: 60px;
+    border-radius:50%;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family:'poppins';
+    /* margin-right: 65rem; */
+}
+
+.header-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    /* margin-right: 63.5rem; */
+}
+
+.header-logo {
+    width: 60px;
+}
+
+
+.welcome-title {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #1D316E;
+    margin: 60px 0 10px;
+    font-family: 'Agbalumo';
+}
+
+.welcome-subtitle {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 40px;
+}
+
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 120px;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-button {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.circle-button.admin {
+    background-color: #00CD00; 
+}
+
+.circle-button.student {
+    background-color: #FF4500; 
+}
+
+
+.access-btn {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.access-btn.admin-btn {
+    background-color: #00CD00;
+    margin-top: 1.3rem; 
+}
+
+.access-btn.student-btn {
+    background-color: #FF4500;
+    margin-top: 1.3rem; 
+}
+
+.access-btn:hover {
+    transform: scale(1.05);
+    color: white; 
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+a:hover{
+    color: white;
+}

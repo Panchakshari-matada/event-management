@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - R.Y.M.E.C Events Management</title>
+    <link rel="stylesheet" href="admlogin.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="Rlogo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="header-content">
+            <h1>Veerashaiva Vidyavardhaka Sangha's</h1>
+            <h2>R.Y.M.E.C Events Management</h2>
+        </div>
+        <img src="images.jpg" alt="College Logo" class="header-logo">
+    </header>
+
+    <!-- Login Form Section -->
+    <main class="login-section">
+        <div class="login-card">
+            <h2 class="login-title">Login</h2>
+            <form action="adminview.html" method="POST" class="login-form">
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="icon user-icon">👤</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span class="icon password-icon">🔒</span>
+                </div>
+                <!-- <a href="#" class="forgot-password">Forgot password?</a> -->
+                <hr>
+                <a href="adminview.html"><button type="submit" class="btn login-btn">Login</button></a>
+            </form>
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            <button class="btn signup-btn"><a href="adminregister.html">Sign-up</button></a>
+        </div>
+    </main>
+</body>
+</html>
